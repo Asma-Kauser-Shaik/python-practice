@@ -1,0 +1,31 @@
+```python
+class Solution:
+    def combinationSum(self, candidates, target):
+        result = []
+
+        def backtrack(start, remaining, current):
+            # Target reached
+            if remaining == 0:
+                result.append(current.copy())
+                return
+
+            # Try candidates
+            for i in range(start, len(candidates)):
+                num = candidates[i]
+
+                # If number is too large, skip it
+                if num > remaining:
+                    continue
+
+                current.append(num)
+
+                # i instead of i + 1 because we can reuse the same number
+                backtrack(i, remaining - num, current)
+
+                # Remove the number for the next possibility
+                current.pop()
+
+        backtrack(0, target, [])
+
+        return result
+```
