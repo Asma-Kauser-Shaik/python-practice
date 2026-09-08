@@ -1,0 +1,15 @@
+class Account:
+   def __init__(self, balance):
+      self.balance = balance
+class SavingsAccount(Account):
+   def withdraw(self, amount):
+       self.balance -= amount
+       if self.balance <100:
+         self.balance -=7
+       if self.balance <0:
+          self.balance = 0
+       return self.balance
+balance = int(input())    
+amount = int(input())
+account = SavingsAccount(balance)
+print(account.withdraw(amount))
