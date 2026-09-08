@@ -1,0 +1,11 @@
+class Item:
+  def __init__(self, name , price):
+     self.name = name
+     self.price = price
+  def calculate_total(self, quantity):
+       return self.price *quantity
+name = input()
+price = float(input())
+quantity = int(input())
+item = Item(name, price)
+print(f"{item.calculate_total(quantity):.1f}")
