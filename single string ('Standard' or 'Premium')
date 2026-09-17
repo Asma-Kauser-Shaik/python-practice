@@ -1,0 +1,12 @@
+class StandardUser:
+  def get_access(self):
+    return"Limited Access"
+class PremiumUser(StandardUser):
+  def get_access(self):
+    return "Unlimited Access"
+user_type = input()
+if user_type == "Standard":
+  user = StandardUser()
+else:
+  user = PremiumUser()
+print(user.get_access())  
