@@ -1,0 +1,18 @@
+class Creature:
+  def sound(self):
+    return "Silent"
+class Bird(Creature):
+  def sound(self):
+    return "Chirp"
+class Fish(Creature):
+   def sound(self):
+     return "Blub"
+animal = input()
+if animal == "Bird":
+  obj = Bird()
+elif animal == "Fish":
+  obj = Fish()
+else:
+  obj = Creature()
+print(obj.sound())  
+  
