@@ -1,0 +1,9 @@
+class Standard:
+  def calcuate(self,n):
+    return n
+class Double(Standard):
+  def calcuate(self,n):
+    return n*2
+n = int(input())  
+obj = Double()
+print(obj.calcuate(n))
